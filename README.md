@@ -7,13 +7,14 @@
 App 内：**源管理 → 右上角「添加」→ 填入下面这个地址**
 
 ```
-https://cdn.jsdelivr.net/gh/m1ngzer/tingshu-sources@main/external_sources.json
+https://cdn.jsdelivr.net/gh/m1ngzer/tingshu-sources@v2/external_sources.json
 ```
 
-> 备选（同一个文件，走 GitHub Pages）：
-> `https://m1ngzer.github.io/tingshu-sources/external_sources.json`
+> 走 tag 而不是分支：jsDelivr 对分支文件有长缓存，改了 JSON 可能半天不生效；
+> tag 是即时生效的。以后每次更新发一个新 tag（`v3`、`v4`…），把链接里的版本号换掉即可。
 >
-> jsdelivr 有缓存，更新后可能要等几分钟才生效。
+> 备选（GitHub Pages，无缓存延迟）：
+> `https://m1ngzer.github.io/tingshu-sources/external_sources.json`
 
 ## 目录
 
@@ -73,12 +74,13 @@ echo "MY_SOURCES_PACKAGE=sources_by_m1ngzer" > gradle.properties
 2. **`external_sources.json` 里 `version` + 1**
 3. 重新编译，替换仓库里的 jar
 4. 提交推送 —— App 每次启动会自动检测更新，用户下拉刷新即可
+5. 打新 tag（`git tag v3 && git push origin v3`），订阅链接换成 `@v3`
 
 ## 托管
 
 仓库开了 GitHub Pages（main 分支根目录），所以：
 
-- 订阅描述文件：`https://cdn.jsdelivr.net/gh/m1ngzer/tingshu-sources@main/external_sources.json`
+- 订阅描述文件：`https://cdn.jsdelivr.net/gh/m1ngzer/tingshu-sources@v2/external_sources.json`
 - jar 包：`https://m1ngzer.github.io/tingshu-sources/sources_by_m1ngzer.jar`
 
 > 注意：**jsDelivr 会拦截 `.jar` 后缀**（返回 403），所以 jar 不能放 jsdelivr。
