@@ -1,7 +1,7 @@
 {
-    "version": 2,
+    "version": 3,
     "entry_package": "sources_by_m1ngzer",
     "download_url": "https://m1ngzer.github.io/tingshu-sources/sources_by_m1ngzer.jar",
-    "update_msg": "首发：书音FM（m.mekui.com）搜索 + 分类 + 播放",
+    "update_msg": "新增 听友听书（tingyou.fm）：搜索 + 分类 + 播放；与书音FM合并为一个包",
     "support_url": ""
 }
